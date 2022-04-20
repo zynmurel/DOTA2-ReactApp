@@ -1,0 +1,76 @@
+.all{
+    font-size: 2vw;
+    margin: 0px 20vw;
+}
+.instructor img{
+    object-fit: cover;
+    width:60px;
+    height:60px;
+    float: left;
+    border-radius: 30px;
+}
+.group img, .in img{
+    object-fit: cover;
+    width:5.5vw;
+    height:5.5vw;
+    float: left;
+    border-radius: 30px;
+}
+.midterm, .subject, .group, .instructor, .ref{
+    background-color: rgb(0, 0, 0, 0.8);
+    padding: 10px 8vw;
+    margin: 20px 0px;
+    padding-bottom: 40px;
+    color: white;
+    font-family: LexendL;
+    border-radius: 10px;
+}
+.midterm{
+    font-size:2.5vw;
+    text-align: center;
+    text-shadow: .05em .05em .02em rgb(156, 76, 0);
+    padding: 10px 50px;
+}
+.subject{
+    text-align: center; 
+}
+.head{
+    color: rgb(255, 152, 35);
+    text-align: center;
+    text-shadow: .05em .05em .02em rgb(156, 76, 0);
+}
+.head1{
+    color: rgb(252, 255, 94);
+    text-shadow: .05em .05em .02em rgb(156, 76, 0);
+}
+.in{
+    padding: 0px 3vw;
+}
+img{
+    margin-right: 20px;
+}
+.in h3{
+    padding-top: 1vw;
+}
+#in img{
+    border-radius: 0px;
+}
+.ref ul {
+    list-style: none;
+    padding: 0vw;
+  }
+  
+.ref  ul li::before {
+    content: "\2022";  
+    color: rgb(255, 115, 0); 
+    font-weight: bold; 
+    display: inline-block; 
+    width: 1em;
+    margin-left: -1em; 
+  }
+a{
+    color: rgb(150, 150, 0);
+}
+a:hover{
+    color: rgb(255, 166, 0);
+}

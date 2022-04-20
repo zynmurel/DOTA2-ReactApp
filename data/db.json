@@ -1,0 +1,77 @@
+{
+    "Heroes":[
+        {   
+            "id":1,
+            "name": "Abaddon", 
+            "img":"Abaddon", 
+            "attribute":"Strength",
+            "description1":"SHIELDS HIS ALLIES OR HIMSELF FROM ATTACKS",
+            "description2":"Able to transform enemy attacks into self-healing, Abaddon can survive almost any assault. Shielding allies and launching his double-edged coil at a friend or foe, he is always ready to ride into the thick of battle.",
+            "type":"melee",
+            "complexity":1,
+            "skills": [
+                {
+                    "id":1,
+                    "name": "abaddon1",
+                    "title":"",
+                    "description":""
+                },{
+                    "id":2,
+                    "name": "abaddon2",
+                    "title":"",
+                    "description":""
+                },{
+                    "id":3,
+                    "name": "abaddon3",
+                    "title":"",
+                    "description":""
+                },{
+                    "id":4,
+                    "name": "abaddon4",
+                    "title":"",
+                    "description":""
+                }
+            ]
+        }, 
+        {
+            "id":2,
+            "name": "Alchemist", 
+            "img":"Alchemist", 
+            "attribute":"Strength",
+            "description1":"",
+            "description2":"",
+            "type":"melee",
+            "complexity":1
+        },
+        {
+            "id":3,
+            "name": "Ancient Apparition", 
+            "img":"Ancient", 
+            "attribute":"Intelligence"
+        },
+        {
+            "id":4,
+            "name": "Anti-Mage", 
+            "img":"AntiMage", 
+            "attribute":"Agility"
+        },
+        {
+            "id":5,
+            "name": "Arc Warden", 
+            "img":"ArcWarden", 
+            "attribute":"Agility"
+        },
+        {
+            "id":6,
+            "name": "Axe", 
+            "img":"Axe", 
+            "attribute":"Strength"
+        },
+        {
+            "id":7,
+            "name": "Bane", 
+            "img":"Bane", 
+            "attribute":"Intelligence"
+        }
+    ]
+}
