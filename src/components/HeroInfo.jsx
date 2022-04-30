@@ -1,3 +1,4 @@
+import { useState } from "react";
 import { useParams } from "react-router-dom";
 import useFetch from "../Hook/useFetch";
 
@@ -16,6 +17,14 @@ const HeroDetails = () => {
         
         return arr;
     }
+    const [activeSkill, setActiveSkill] = useState(undefined)
+    const grid = (num) =>{
+        let grids = []
+        for(let x=0; x<=num;x++){
+            grids.push("auto");
+        }
+        return grids
+    }
 
     return ( 
         <div className="heroInfo">
@@ -28,7 +37,7 @@ const HeroDetails = () => {
                                     <img src={require('./stats/'+hero.attribute+'.jpeg')}/>
                                     <h4>{hero.attribute}</h4>
                                 </div>
-                                <h1>{hero.name}</h1>
+                                <h1>{hero.name.toUpperCase()}</h1>
                                 <h5>{hero.description1}</h5>
                                 <p>{hero.description2}</p>
                                 <h4>ATTACK TYPE</h4>
@@ -39,28 +48,30 @@ const HeroDetails = () => {
                                 <div>
                                     <h4>COMPLEXITY</h4>
                                     <div className="diamonds">
-                                    <ul>{complexity(1)}</ul>
+                                    <ul>{complexity(hero.complexity)}</ul>
                                     </div>
-
                                 </div>
                     </div>
-                    <div className="right" style={{backgroundImage:`url(/heroes/${hero.name}.png)`}}>
+                    <div className="right" style={{backgroundImage:`url(/heroes/${hero.img}.png)`}}>
+                        <div className="container">
                         <h3>ABILITIES</h3>
-                        <div className="grid-container">
-                            <div id="zero" className="grid-item">
-                                <div className="tooltip0">
+                        <div className="grid-container" style={{gridTemplateColumns:`${grid(!hero.skills?0:hero.skills.length).toString().replace(/,/g," ")}`}} >
+                            <div id="zero" className="grid-item"style={{backgroundImage:`url(/heroes/Talents.png)`}} >
+                                <div className="tooltip0" style={{backgroundImage: `url(/heroes/${hero.img}/${hero.img}T.png)`}}>
                                 </div>
                             </div>
                            {hero.skills && 
                                 hero.skills.map(skill =>(
-                                    <div key={skill.name} id={skill.name} className="grid-item">
-                                        <div id={skill.name} className="skill">
+                                    <div key={skill.name} id={skill.name} className="grid-item" style={{backgroundImage:`url(/heroes/${hero.img}/${skill.name}.webp)`}} onMouseEnter={()=>setActiveSkill(skill.id)} onMouseLeave={()=>setActiveSkill(undefined)}>
+                                        <div id={skill.name} className="skill" style={{visibility:`${activeSkill === skill.id? 'visible': 'hidden'}`}} >
                                             <h2>{skill.title}</h2>
                                             <p>{skill.description}</p>
                                         </div>
                                     </div>
                                 ))
                            }
+                        </div>
+
                         </div>
                         </div>
                     </div>

@@ -1,0 +1,10 @@
+.navigator a{
+    font-size: 2vw;
+    display: inline-block;
+    margin: 0 2vw;
+    background-color: rgba(0, 0, 0, 0.511);
+    padding: .5vw 3vw;
+    border-radius: .3vw;
+    border: .2vw solid rgba(0, 0, 0, 0.759);
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
