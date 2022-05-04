@@ -5,6 +5,7 @@ import {BrowserRouter as Router, Routes, Route} from 'react-router-dom';
 import HeroDetails from "./components/HeroInfo";
 import Home from "./components/Home";
 import NotFound from "./components/NotFound";
+import AddHero from "./components/AddHero";
 function App() {
 
 
@@ -22,6 +23,7 @@ function App() {
           <Route path="/heroes" element={<Heroes/>}/>
           <Route path="/credits" element={<Credits/>}/>
           <Route path="/details/:id" element={<HeroDetails/>}/>
+          <Route path="/addhero" element={<AddHero/>}/>
           <Route path="*" element={<NotFound/>}/>
         </Routes>
       </div>

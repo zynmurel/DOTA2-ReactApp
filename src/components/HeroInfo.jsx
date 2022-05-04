@@ -52,7 +52,7 @@ const HeroDetails = () => {
                                     </div>
                                 </div>
                     </div>
-                    <div className="right" style={{backgroundImage:`url(/heroes/${hero.img}.png)`}}>
+                    <div className="right" style={{backgroundImage:`url(/heroes/${hero.img}/${hero.img}.png)`}}>
                         <div className="container">
                         <h3>ABILITIES</h3>
                         <div className="grid-container" style={{gridTemplateColumns:`${grid(!hero.skills?0:hero.skills.length).toString().replace(/,/g," ")}`}} >

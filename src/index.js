@@ -5,6 +5,7 @@ import './Home.css';
 import './Credits.css';
 import './HeroInfo.css'
 import './nav.css';
+import './AddHero.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 

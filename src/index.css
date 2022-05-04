@@ -97,6 +97,7 @@ body{
 .buttons{
     text-align: left;
     margin: 2.5vw;
+    position: relative;
 }
 button{
     margin-right: 1vw;
@@ -118,4 +119,32 @@ button img{
   height: 1.4vw;
   margin-right: -.5vw;
   margin-bottom: -.2vw;
+}
+.buttons .Add{
+  margin-right: 1vw;
+  font-size: 1.5vw;
+  padding: .2vw 1.5vw; 
+  font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  background-color: rgba(54, 26, 0, 0.796);
+  color: aliceblue;
+  border-radius: .3vw;
+  box-shadow: 2px 2px 2px black;
+  filter: grayscale(1);
+  position: absolute;
+  right: 0;
+  margin-right: 0;
+  color: rgb(255, 255, 255);
+}
+.buttons .Add:hover{
+  filter: grayscale(0);
+  background-color:rgb(255, 204, 0);
+  color: black;
+}
+.buttons .Add:hover .plus{
+  filter: grayscale(0);
+  filter: invert(0);
+}
+.heroes .plus{
+  filter: invert(1);
+  margin-right: .3vw;
 }
