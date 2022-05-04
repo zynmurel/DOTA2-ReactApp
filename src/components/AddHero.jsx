@@ -4,7 +4,7 @@ import skillArray from "./skillArray";
 
 const AddHero = () => {
     const r= useFetch("http://localhost:8000/allHeroes");
-    const {data: heroNames} = r;
+    const {data: heroNames, error, isPending} = r;
     const result= useFetch("http://localhost:8000/Heroes");
     heroNames && heroNames.sort(function(a, b) {
         return a.name.toLowerCase().localeCompare(
@@ -26,7 +26,6 @@ const AddHero = () => {
         })
         return v
     })}
-    console.log(Nani)
     const [skills, setSkills] = useState([])
     const handleSubmit = ()=>{
         const hero = {name ,img:name.replace(" ",""), attribute, description1, description2, type, complexity, skills}
@@ -57,8 +56,11 @@ const AddHero = () => {
                         }
                          }}
                 >
-                    <option value={""} disabled >Select Hero</option>
+                    
+                    {Nani.length===0?<option value={""} disabled >All Heroes Selected</option>:<option value={""} disabled >Select Hero</option>}
                     { Nani.map((hero)=>(<option key={hero.name} value={hero.name}>{hero.name}</option>))}
+                    {isPending&&<option value={""} disabled >Loading......</option>}
+                    {error&&<option value={""} disabled >Unable to load</option>}
                 </select>
 
                 <label>Hero Attribute:</label>
@@ -120,7 +122,7 @@ const AddHero = () => {
                             <div className="skills" key={skill.id}>
                                 <label className="skillLabel">Skill {index+1}:</label>
                                 <input 
-                                required
+                                
                                 onChange={e =>{
                                     const title = e.target.value;
                                     setSkills(currentSkills =>currentSkills.map(x=> x.id=== skill.id?{
@@ -134,7 +136,7 @@ const AddHero = () => {
                                 value={skill.title}
                                 />
                                 <textarea 
-                                required
+                                
                                 type="text" 
                                 placeholder="Skill Description"
                                 value={skill.description}

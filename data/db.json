@@ -293,48 +293,6 @@
           "description": "When activated, all damage dealt to you will heal instead of harm. Most negative buffs will also be removed. If the ability is not on cooldown, it will automatically activate if your health falls below 400.0."
         }
       ]
-    },
-    {
-      "name": "Dark Willow",
-      "img": "DarkWillow",
-      "attribute": "Intelligence",
-      "description1": "nhbfds",
-      "description2": "sddskjbasc nsjndsocdocamosancsibsdicasixnaisn",
-      "type": "range",
-      "complexity": "3",
-      "skills": [
-        {
-          "title": "osnvsdiono",
-          "description": "dfjnvsocidcoaijso",
-          "id": 0,
-          "name": 1
-        },
-        {
-          "title": "sovnsdoicnsdco",
-          "description": "sdcndsoicnao",
-          "id": 1,
-          "name": 2
-        },
-        {
-          "title": "osfnvsodi",
-          "description": "oinsvnsodicndsoin",
-          "id": 2,
-          "name": 3
-        },
-        {
-          "title": "osdno",
-          "description": "osnsoidno nao",
-          "id": 3,
-          "name": 4
-        },
-        {
-          "title": "nosdi",
-          "description": "non asoi nasoin",
-          "id": 4,
-          "name": 5
-        }
-      ],
-      "id": 9
     }
   ],
   "AllHeroes": [
@@ -421,6 +379,76 @@
     {
       "name": "Ancient Apparition",
       "id": 17,
+      "skill": 4
+    },
+    {
+      "name": "Dazzle",
+      "id": 18,
+      "skill": 5
+    },
+    {
+      "name": "Disruptor",
+      "id": 19,
+      "skill": 4
+    },
+    {
+      "name": "Doom",
+      "id": 20,
+      "skill": 4
+    },
+    {
+      "name": "Drow Ranger",
+      "id": 21,
+      "skill": 4
+    },
+    {
+      "name": "Earthshaker",
+      "id": 22,
+      "skill": 4
+    },
+    {
+      "name": "Earth Spirit",
+      "id": 23,
+      "skill": 5
+    },
+    {
+      "name": "Enigma",
+      "id": 24,
+      "skill": 4
+    },
+    {
+      "name": "Grimstroke",
+      "id": 25,
+      "skill": 4
+    },
+    {
+      "name": "Gyrocopter",
+      "id": 26,
+      "skill": 4
+    },
+    {
+      "name": "Hoodwink",
+      "id": 27,
+      "skill": 4
+    },
+    {
+      "name": "Huskar",
+      "id": 28,
+      "skill": 4
+    },
+    {
+      "name": "Jakiro",
+      "id": 29,
+      "skill": 4
+    },
+    {
+      "name": "Pudge",
+      "id": 30,
+      "skill": 4
+    },
+    {
+      "name": "Clinkz",
+      "id": 31,
       "skill": 4
     }
   ]
