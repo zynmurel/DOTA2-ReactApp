@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import useFetch from "../Hook/useFetch";
 const Heroes = () => {
     
-    const result= useFetch("http://localhost:8000/Heroes");
+    const result= useFetch("http://localhost:8001/Heroes");
     const { data:heroes, isPending, error } = result;
     console.log(result)
     

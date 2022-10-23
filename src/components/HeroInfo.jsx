@@ -1,10 +1,12 @@
 import { useState } from "react";
 import { useParams } from "react-router-dom";
 import useFetch from "../Hook/useFetch";
+import { useNavigate } from "react-router-dom";
 
 const HeroDetails = () => {
+    const navigate = useNavigate()
     const { id } = useParams();
-    const { data:hero, isPending, error } = useFetch(`http://localhost:8000/Heroes/${id}`);
+    const { data:hero, isPending, error } = useFetch(`http://localhost:8001/Heroes/${id}`);
     const complexity = (y) =>{
         const arr = [];
         let x=0;
@@ -16,6 +18,14 @@ const HeroDetails = () => {
         }
         
         return arr;
+    }
+    const handleClick = () =>{
+        fetch(`http://localhost:8001/Heroes/${hero.id}`, {
+            method: "DELETE"
+        }).then(()=>{
+            navigate('/heroes')
+        })
+
     }
     const [activeSkill, setActiveSkill] = useState(undefined)
     const grid = (num) =>{
@@ -34,7 +44,7 @@ const HeroDetails = () => {
                 <div className="heroDetails">
                         <div className="left">
                                 <div className='top'>
-                                    <img src={require('./stats/'+hero.attribute+'.jpeg')}/>
+                                    <img src={require('./stats/'+hero.attribute+'.jpeg')} alt="a"/>
                                     <h4>{hero.attribute}</h4>
                                 </div>
                                 <h1>{hero.name.toUpperCase()}</h1>
@@ -74,6 +84,7 @@ const HeroDetails = () => {
 
                         </div>
                         </div>
+                        <button onClick={handleClick}>Delete</button>
                     </div>
             )}
         </div>

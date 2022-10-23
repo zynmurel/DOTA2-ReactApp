@@ -1,11 +1,13 @@
 import { useState } from "react";
 import useFetch from "../Hook/useFetch";
 import skillArray from "./skillArray";
+import { useNavigate } from 'react-router-dom'
 
 const AddHero = () => {
     const r= useFetch("http://localhost:8000/allHeroes");
     const {data: heroNames, error, isPending} = r;
     const result= useFetch("http://localhost:8000/Heroes");
+    const navigate = useNavigate()
     heroNames && heroNames.sort(function(a, b) {
         return a.name.toLowerCase().localeCompare(
             b.name.toLowerCase()
@@ -13,11 +15,12 @@ const AddHero = () => {
     });
     const { data:heroes} = result;
     const [name, setName] = useState();
-    const [attribute, setAtt] = useState();
+    const [attribute, setAtt] = useState(); 
     const [description1, setDescription1] = useState();
     const [description2, setDescription2] = useState();
     const [type, setType] = useState();
     const [complexity, setComplex] = useState();
+    const [isPending2, setIsPending2] = useState(false)
     let Nani=[];
     if(heroes && heroNames){Nani = heroNames.filter(hero=> {
         let v=true
@@ -29,13 +32,17 @@ const AddHero = () => {
     const [skills, setSkills] = useState([])
     const handleSubmit = ()=>{
         const hero = {name ,img:name.replace(" ",""), attribute, description1, description2, type, complexity, skills}
+
+        setIsPending2(true)
         fetch("http://localhost:8000/Heroes",{
             method: 'POST',
             headers: { "Content-Type":"application/json" },
             body: JSON.stringify(hero)
         }).then(()=>{
-            alert(`${hero.name} Added!`)
+                setIsPending2(false)
         })
+
+        navigate('/heroes')
     }
    
     return ( 
@@ -159,7 +166,8 @@ const AddHero = () => {
                 }
                 <div>{JSON.stringify(skills)}</div>
                 
-                <button>Add Hero</button>
+                {!isPending2 && <button>Add Hero</button>}
+                {isPending2 && <button disabled>Adding Hero</button>}
             </form>
         </div>
      );
